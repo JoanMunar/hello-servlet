@@ -1,0 +1,92 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+
+  <display-name>Archetype Created Web Application</display-name>
+
+    <!--Map Filter-->
+    <filter>
+        <filter-name>LogFilter</filter-name>
+        <filter-class>filters.LogFilter</filter-class>
+
+        <init-param>
+            <param-name>test-param</param-name>
+            <param-value>Initalization Paramter</param-value>
+        </init-param>
+
+    </filter>
+
+    <filter-mapping>
+        <filter-name>LogFilter</filter-name>
+        <url-pattern>/check</url-pattern>
+    </filter-mapping>
+
+    <!--Servlets-->
+
+    <servlet>
+        <servlet-name>hello-servlet</servlet-name>
+        <servlet-class>HelloServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>view-header</servlet-name>
+        <servlet-class>Viewheaders</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>error-handler</servlet-name>
+        <servlet-class>ErrorHandler</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>view-header</servlet-name>
+        <servlet-class>ViewHeaderServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>read-cookies</servlet-name>
+        <servlet-class>ReadCookies</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>session-track</servlet-name>
+        <servlet-class>SessionTrack</servlet-class>
+    </servlet>
+
+    <!--Servlet Maping-->
+
+    <servlet-mapping>
+        <servlet-name>read-cookies</servlet-name>
+        <url-pattern>/cookies</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>view-header</servlet-name>
+        <url-pattern>/viewHeader</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>hello-servlet</servlet-name>
+        <url-pattern>/helloUrl</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>error-handler</servlet-name>
+        <url-pattern>/errorHandler</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>session-track</servlet-name>
+        <url-pattern>/session</url-pattern>
+    </servlet-mapping>
+
+    <!-- error-code related error pages -->
+    <error-page>
+        <error-code>400</error-code>
+        <location>/ErrorHandler</location>
+    </error-page>
+
+
+</web-app>
